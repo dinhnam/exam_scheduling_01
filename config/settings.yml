@@ -1,0 +1,5 @@
+per_page:
+  short: 10
+  long: 20
+section:
+  state: [[ "open", true], ["close", false]]

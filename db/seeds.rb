@@ -19,7 +19,7 @@
                admin: false
                )
 end
-20.times do |n|
+35.times do |n|
   name  = "ruby on rails #{n}"
   code  = "IT#{n}"
   Subject.create!(code:  code,
