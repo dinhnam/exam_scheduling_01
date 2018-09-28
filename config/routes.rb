@@ -11,4 +11,18 @@ Rails.application.routes.draw do
     resources :schedules
     resources :users
   end
+
+  draw :admin
+
+  get "/login", to: "login#new"
+  post "/login", to: "login#create"
+
+  resource :subject, only: [:show]
+  namespace :admin do
+  	resource :subject, except: [:new, :create, :destroy]
+  end
+
+  get "/getedit/:id", to: "students#edit"
+  resources :students
+  root "students#new"
 end

@@ -3,3 +3,5 @@ per_page:
   long: 20
 section:
   state: [[ "open", true], ["close", false]]
+students:
+ per_page: 15
