@@ -297,4 +297,8 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
+<<<<<<< HEAD
    1.16.2
+=======
+   1.16.5
+>>>>>>> 6b78b7414dbf5f3f82cb464f0bbe8658e9798c59
