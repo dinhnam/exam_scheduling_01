@@ -1,28 +1,16 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "subjects#index"
-    resources :subjects do
-      collection do
-        post 'add'
-        get 'remove'
-      end
+  root "schedules#index"
+  get "static_pages/contact"
+  get "static_pages/notice"
+  resources :subjects do
+    collection do
+      post "add"
+      post "remove"
     end
-    resources :rooms
-    resources :schedules
-    resources :users
   end
-
-  draw :admin
-
-  get "/login", to: "login#new"
-  post "/login", to: "login#create"
-
-  resource :subject, only: [:show]
-  namespace :admin do
-  	resource :subject, except: [:new, :create, :destroy]
+  resources :rooms
+  resources :schedules
+  resources :users
   end
-
-  get "/getedit/:id", to: "students#edit"
-  resources :students
-  root "students#new"
 end

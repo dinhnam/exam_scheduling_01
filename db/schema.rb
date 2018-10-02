@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2018_09_25_112019) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["schedule_id"], name: "index_invitations_on_schedule_id"
-    t.index ["user_id", "schedule_id"], name: "index_invitations_on_user_id_and_schedule_id", unique: true
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
@@ -60,16 +59,16 @@ ActiveRecord::Schema.define(version: 2018_09_25_112019) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string "class_name"
-    t.string "subject_code"
-    t.string "subject_name"
+    t.string "code_subject"
+    t.string "name_subject"
     t.integer "times_exam"
     t.string "room_code"
-    t.datetime "day"
+    t.string "room_name"
+    t.string "day"
     t.integer "session"
+    t.integer "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subject_code", "room_code"], name: "index_schedules_on_subject_code_and_room_code"
   end
 
   create_table "students", force: :cascade do |t|

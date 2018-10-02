@@ -1,8 +1,10 @@
 class SubjectsController < ApplicationController
-  before_action :set_subject, only: [:show, :edit, :update, :destroy, :remove]
+
+  before_action :set_subject, only: [:show, :edit, :update, :destroy,
+    :remove, :add]
 
   def index
-    @subjects = search params[:search], Subject
+    @subjects = search params[:search], Subject, "code", "name"
     @subject = Subject.new
   end
 
@@ -21,8 +23,7 @@ class SubjectsController < ApplicationController
   end
 
   def edit
-    @students = search params[:search], @subject.students
-    @student = @subject.students.build
+    @users = search params[:search], @subject.students, "code", "name"
   end
 
   def show; end
@@ -37,8 +38,7 @@ class SubjectsController < ApplicationController
   end
 
   def add
-    @subject = Subject.find_by id: params[:student][:sub_id]
-    @student = User.find_by code: params[:student][:code]
+    @student = User.find_by code: params[:code]
 
     if @student.blank? || @subject.was_exist?(@student)
       flash[:danger] = t "flash_update_fail"

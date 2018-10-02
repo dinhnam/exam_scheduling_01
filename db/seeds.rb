@@ -5,11 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-100.times do |n|
+
+1000.times do |n|
   name  = Faker::Name.name
-  code  = Faker::Code.npi
+  code  = Faker::Code.nric
   email = "example-#{n+1}@railstutorial.org"
-  info = "#{name},#{code}"
+  info = "#{name},#{code},#{email}"
   password = "password"
   User.create!(code:  code,
                name: name,
@@ -19,7 +20,8 @@
                admin: false
                )
 end
-35.times do |n|
+
+30.times do |n|
   name  = "ruby on rails #{n}"
   code  = "IT#{n}"
   Subject.create!(code:  code,
@@ -40,12 +42,14 @@ end
 end
 
 subjects = Subject.all
-users=User.all
+users = User.all
+
 subjects.each do |s|
-  rand(100).times do |n|
-  user = users[rand(100)]
+  rand(30..50).times do |n|
+  user = users[rand(0...1000)]
   unless s.was_exist?(user)
   s.add_student user
   end
   end
 end
+

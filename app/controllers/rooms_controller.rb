@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def index
-    @rooms = search params[:search], Room
+    @rooms = search params[:search], Room, "code", "name"
     @room = Room.new
   end
 
@@ -19,7 +19,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    @rooms = search params[:search], Room
+    @rooms = search params[:search], Room, "code", "name"
     render :index
   end
 

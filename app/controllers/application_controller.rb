@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  include ScheduleHelper
 
   private
 
@@ -11,19 +12,13 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def search search, objects
-    if search
-      object = objects.find_by code: search
-      if object
-        objects.where(code: search).paginate page: params[:page],
-         per_page: Settings.per_page.long
-      else
-        objects.paginate page: params[:page], per_page:
-          Settings.per_page.long
-      end
+  def search search, objects, key1, key2
+    if search.blank?
+      objects.paginate page: params[:page], per_page: Settings.per_page.long
     else
-      objects.paginate page: params[:page], per_page:
-        Settings.per_page.long
+      objects.where("#{key1} like ? OR #{key2} like ?",
+        "%#{search}%", "%#{search}").paginate page: params[:page],
+          per_page: Settings.per_page.long
     end
   end
 end

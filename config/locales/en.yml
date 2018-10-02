@@ -9,24 +9,25 @@ en:
     confirm: "Are you sure?"
     edit: "edit"
     delete: "delete"
+    minute: "minute"
   subjects:
-    subject_code: "code subject"
-    student_code: "code student"
-    student_name: "name student"
-    subject_name: "name subject"
+    code: "code subject"
+    name: "name subject"
     times: "times exam"
     create: "create subject"
     save: "save edit"
-    search_subject: "search subject"
-    search_student: "search student"
+    search: "search subject"
     add: "add student"
-    student_total: "total student"
+    total: "total student"
   schedules:
     day: "day exam"
     session: "session"
     create: "create schedule"
     start: "Start day"
     end: "End date"
+    search: "search schedule"
+    group: "group"
+    list: "list of exam classes"
   rooms:
     search: "search room"
     code: "room code"
@@ -43,166 +44,20 @@ en:
     schedules: "Schedules"
     subjects: "Subjects"
     rooms: "Rooms"
+    login: "Login"
+    user: "Users"
+    contact: "Contact"
   footer:
-    en: "English"
-    vi: "Vietnamese"
+    en: "english"
+    vi: "vietnamese"
     author: "designer @dinh van nam"
-  hello: "Hello world"
-  base_title: "Exam Scheduling"
-  nostudent: "Not exist"
-  please_log: "Log in first"
-
-  admin:
-    index:
-      title: "Bạn chưa đăng nhập"
-      infor: "Bạn Chưa Đăng Nhập"
-      click: "Click vào đây để đăng nhập"
-
-  layouts:
-    menu:
-      subject: "Học Phần"
-      class: "Lớp"
-      student: "Sinh Viên"
-      room: "Phòng"
-      day: "Ngày"
-      logout: "Logout"
-    header:
-    application:
-      schedule: "Exam Scheduling"
-      users: "User"
-      account: "Account"
-      profile: "Profile"
-      setting: "Setting"
-      logout: "Log out"
-      login: "Log in"
-      home: "Home"
-
-  students:
-    edit:
-      form: "Form edit"
-      save: "Save"
-    create:
-      success: "Create success"
-      failed: "Failed to save, check information again please before create"
-    update:
-      update: "Update ready"
-    new:
-      create: "Create"
-      new: "Create new student"
-    index:
-      students: "All students"
-      delete: "Delete"
-      sure: "Are you sure to delete this student?"
-    destroy:
-      delete: "Delete success"
-
-  sessions:
-    new:
-      login: "Log in"
-    create:
-      invalid: "Invalid email/password combination"
-
-  subjects:
-    subject_list:
-      title: "Học Phần"
-      name: "Danh sách học phần"
-      add: "Thêm"
-      subject_code: "Mã học phần"
-      subject_name: "Tên học phần"
-      class_list_of_subject: "Danh sách lớp"
-      edit: "Sửa"
-      delete: "Xóa"
-      reckon_link: "X e m"
-      edit_link: "Sửa"
-      delete_checkbox: "Xóa"
-      delete_button: "Xóa"
-    new:
-      signup: "New subject"
-      create: "Create new"
-    create:
-      success: "Create new successful"
-      error: "Error, want to create new again !"
-    update:
-      update: "Subject updated !"
-    edit:
-      please_log: "Please log in first !"
-      edit: "Edit subject"
-      save: "Save"
-      update: "Update info"
-    show:
-      nouser: "Subject not exist! Want to create new one?"
-      name: "Name"
-      code: "Code"
-      capacity: "Capacity"
-      exam_during: "Exam during"
-    destroy:
-      delete: "Subject's deleted !"
-      delete_button: "Xóa"
-
-  rooms:
-    rooms_list:
-      title: "Phòng"
-      name: "Danh sách các phòng"
-      add: "Thêm"
-      edit: "Sửa"
-      delete: "Xóa"
-      reckon_link: "X e m"
-      edit_link: "Sửa"
-      delete_checkbox: "Xóa"
-      delete_button: "Xóa"
-
-  class:
-    class_list:
-      title: "Lớp"
-      name: "Danh sách lớp"
-      add: "Thêm"
-      subject_code_of_class: "Mã học phần"
-      subject_name_of_class: "Tên học phần"
-      class_code: "Mã Lớp"
-      student_list_of_class: "Danh sách sinh viên"
-      edit: "Sửa"
-      delete: "Xóa"
-      reckon_link: "X e m"
-      edit_link: "Sửa"
-      delete_checkbox: "Xóa"
-      delete_button: "Xóa"
-
-  admin:
-    index:
-      title: "Bạn chưa đăng nhập"
-      infor: "Bạn Chưa Đăng Nhập"
-      click: "Click vào đây để đăng nhập"
-  login:
-    new:
-      title: "Đăng nhập"
-      name: "Đăng nhập"
-      username: "Username"
-      password: "Password"
-      button: "Let me in."
-      sure: "Are you sure to delete this subject !"
-      subjects: "All subject here"
-
   users:
-    new:
-      signup: "Sign up new Student/Supervisor"
-      create: "Create new user"
-    create:
-      success: "Create new user successful"
-    update:
-      update: "Account updated !"
-    edit:
-      please_log: "Please log in first !"
-      edit: "Edit account"
-      save: "Save"
-      update: "Update informations"
-    show:
-      nouser: "User not exist! Want to sign up?"
-      name: "Name"
-      code: "Code"
-      email: "Email"
-      info: "Info"
-    destroy:
-      delete: "User's deleted !"
-    index:
-      sure: "Are you sure to delete this user !"
-      users: "All users: admins, supervisors, students"
+    code: "code student"
+    name: "name student"
+    search: "search student"
+  notice:
+    times_exam_html: "<br><h3>Notification schedule</h3>
+           <h4>Session 1: 7:15 to 9:15</h4>
+           <h4>Session 2: 9:45 to 11:45</h4>
+           <h4>Session 3: From 12:45 to 2:45</h4>
+           <h4>Session 4: From 3:15 to 5:15</h4"
