@@ -1,4 +1,6 @@
-<p><%= t "schedules.list" %></p>
+<p><%= t "schedules.list" %>:
+  <%= @schedule.name_subject %>
+  <%= t "schedules.group" %>: <%= @schedule.group %></p>
 <table class="table table-bordered table-striped">
   <thead class="bg-info">
     <tr>

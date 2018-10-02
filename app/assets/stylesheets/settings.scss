@@ -9,7 +9,7 @@ body {
   text-align: center;
 }
 .header {
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   background:url(header.jpg) no-repeat;
   background-size:cover;
@@ -42,9 +42,6 @@ main {
   background-position: center;
   background-size: contain;
   margin-top: 50px;
-  height: 250px;
-}
-
-.notice img {
-  opacity: 0.5;
+  height: 280px;
+  font-style: italic;
 }

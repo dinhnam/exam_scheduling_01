@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   scope "(:locale)", locale: /en|vi/ do
   root "schedules#index"
   get "static_pages/contact"
@@ -12,5 +13,7 @@ Rails.application.routes.draw do
   resources :rooms
   resources :schedules
   resources :users
+  resources :feedbacks
   end
+
 end

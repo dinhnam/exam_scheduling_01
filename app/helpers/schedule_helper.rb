@@ -6,13 +6,15 @@ module ScheduleHelper
   def create_vertices subjects
     blocks = {}
     subjects.each do |subject|
-      array = []
-      subject.students.each do |student|
-        student.subjects.each do |s|
-          array = array << s.id unless array.include? s.id
+      if subject.students.count.positive?
+        array = []
+        subject.students.each do |student|
+          student.subjects.each do |s|
+            array = array << s.id unless array.include? s.id
+          end
         end
+        blocks = blocks.merge(subject.id => array)
       end
-      blocks = blocks.merge(subject.id => array)
     end
     blocks
   end

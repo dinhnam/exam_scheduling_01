@@ -73,8 +73,4 @@ class SubjectsController < ApplicationController
     params.require(:subject).permit :name, :code, :students_total, :times_exam
   end
 
-  def student_params
-    params.require(:class_student).permit :code, :subject_code,
-      :student_code, :student_name
-  end
 end
